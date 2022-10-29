@@ -1,0 +1,15 @@
+version: '3.4'
+
+services:
+  codechallange:
+    image: codechallange
+    build: .
+    env_file: ./.env
+    environment:
+      NODE_ENV: development
+      MYSQL_HOST: $DB_HOST
+      MYSQL_USER: $DB_USER
+      MYSQL_PASSWORD: $DB_PASSWORD
+      MYSQL_DB: $DB_NAME
+    ports:
+      - 8080:8080
